@@ -60,9 +60,7 @@ const ProblemSolution = () => {
                     <div className="lg:w-1/2 w-full">
                         <div
                             ref={containerRef}
-                            className="relative aspect-video rounded-xl overflow-hidden border border-[#232f48] shadow-2xl group cursor-col-resize select-none"
-                            onMouseMove={(e) => handleMove(e.clientX)}
-                            onTouchMove={(e) => handleMove(e.touches[0].clientX)}
+                            className="relative aspect-video rounded-xl overflow-hidden border border-[#232f48] shadow-2xl group select-none"
                         >
                             {/* After Image (Clear) */}
                             <div className="absolute inset-0 bg-cover bg-center z-0" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQmzX2v-JO3lxEv_DvHLhYIED7-CiQbkTy1MlZsIvxyBt2DlyZq3aWtTRUQ2NLJ1WlTqO6oiwtdYY_KPqEePAqkpVlbLa9i2v83eC39LDTo4YnsWWy9H9DG0e-dE2eHdhAdkCidgeVxOkoCve_7lsz34FfzvHafOx8vI8ZYvU0tJCCHrOj1LHXZfB6Sp-ZIBm3mvjj9TMmWZYuQGVW2Pr7vCE29jFtq49Ls0iZ_fmQySsDf5Bd780fnWPql_nGKrxIJmT64J2uWLW5")', filter: 'contrast(1.2) saturate(1.1)' }}>
@@ -79,7 +77,7 @@ const ProblemSolution = () => {
                             <div className="absolute inset-0 bg-cover bg-center z-10 border-r-2 border-white" style={{
                                 width: `${sliderPosition}%`,
                                 backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuAA_SgwqfY7zTMvUMkXmMqwmL4QNVe9O7hYwzKBsiBRSTYN7Tua2UpnDxcvF7LFsJfEQbpiqUDt52eAbNiHLdF8rgyFtCI-wwWMx1oc2zB68DHfoCF1P1jcoap2YSSL3YBHGcI5d8CuvAodz4OdTzrZcynQO26irYd2bSrVpvhlhrWozLUcJY8OIOFM0itX9w_2oyhfImX9QDsrGMca_4eYnCrjsQcA_JAJOoYoQCy9YalyhHkgvDJ3NJNd7aLC482hNRUt_0ysujT4")',
-                                filter: 'blur(4px) brightness(0.5)'
+                                filter: 'url(#motionBlur) brightness(0.9)'
                             }}>
                                 <div className="absolute inset-0 flex items-center justify-center">
                                     <div className="bg-black/50 p-2 rounded text-white text-xs font-mono">RAW INPUT</div>
@@ -92,13 +90,33 @@ const ProblemSolution = () => {
                                     <span className="material-symbols-outlined text-sm">compare_arrows</span>
                                 </div>
                             </div>
+
+                            {/* Range Input for Interaction */}
+                            <input
+                                type="range"
+                                min="0"
+                                max="100"
+                                value={sliderPosition}
+                                onChange={(e) => setSliderPosition(e.target.value)}
+                                className="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30"
+                            />
                         </div>
-                        <p className="text-center text-gray-500 text-sm mt-4 font-mono">HOVER / DRAG TO REVEAL AI ENHANCEMENT</p>
+                        <p className="text-center text-gray-500 text-sm mt-4 font-mono">DRAG TO REVEAL AI ENHANCEMENT</p>
                     </div>
                 </div>
             </div>
+
+            {/* SVG Filter for Motion Blur */}
+            <svg className="absolute w-0 h-0" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="motionBlur">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="2 0" />
+                    </filter>
+                </defs>
+            </svg>
         </section>
     );
 };
+
 
 export default ProblemSolution;

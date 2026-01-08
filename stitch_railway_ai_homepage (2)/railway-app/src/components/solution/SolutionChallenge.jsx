@@ -20,7 +20,7 @@ const SolutionChallenge = () => {
                     {/* 1. The Image (Blurred) */}
                     <div className="absolute inset-0 w-full h-full bg-cover bg-center" style={{
                         backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCfjrMdebKZmvV0GRrx_gkEk0F8QQfHQZdoUpwxFhpnyPfcgy7NidV-frHPSHbi3uiyw6wh_4UHOUj4o2LVYZtX_k72sWdlsgT-RNPDwl4mO8LIMhvmLpaJruZif5oXatUK4mLJ5fCjCjZ945ZAj28mJZoxgTtUv9B9aPIDJeO6tWOjPYfcRaNVLOKs2r9uxvcwOJQcYaeko5sM6PqUBv3YFi58rWC0Unu_xUxKDX30VB6-NYXBVU_1w0bCltvjXMov0FD3sLVoloD')",
-                        filter: "blur(12px) brightness(0.8) contrast(1.1)"
+                        filter: "blur(3px) brightness(0.9) contrast(1.1)"
                     }}></div>
 
                     {/* 2. The Label (Sharp, on top of blur) */}
