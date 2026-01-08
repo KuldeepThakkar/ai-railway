@@ -34,6 +34,29 @@ class VideoStreamer:
         self.running = False
         self.latest_frame_data = None
         self.stats = {"fps": 0, "processed_count": 0, "avg_inference_time": 0}
+    
+    def reload_images(self, new_dir):
+        """Reloads images from a new directory."""
+        if not os.path.exists(new_dir):
+            print(f"Directory not found: {new_dir}")
+            return False
+            
+        new_files = [
+            os.path.join(new_dir, f) 
+            for f in sorted(os.listdir(new_dir)) 
+            if f.endswith(('.png', '.jpg', '.jpeg'))
+        ]
+        
+        if not new_files:
+            print(f"No images found in {new_dir}")
+            return False
+            
+        self.running = False  # Pause stream briefly
+        self.image_files = new_files
+        self.current_idx = 0
+        self.running = True   # Resume
+        print(f"Reloaded streamer with {len(new_files)} images from {new_dir}")
+        return True
 
     async def start_stream(self):
         self.running = True
@@ -42,6 +65,10 @@ class VideoStreamer:
             start_time = time.time()
             
             # 1. Get Image
+            if not self.image_files:
+                await asyncio.sleep(1)
+                continue
+                
             img_path = self.image_files[self.current_idx]
             original_img = Image.open(img_path).convert("RGB")
             
