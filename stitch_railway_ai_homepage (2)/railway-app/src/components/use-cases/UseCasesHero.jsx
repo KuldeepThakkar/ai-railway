@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 const UseCasesHero = () => {
     return (
         <section className="relative h-[85vh] w-full flex items-center justify-center overflow-hidden bg-background-dark">
@@ -30,14 +32,14 @@ const UseCasesHero = () => {
                         Our edge-based AI eliminates motion blur and detects critical structural defects in real-time, even in low-light conditions.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                        <button className="h-12 px-6 rounded-lg bg-primary hover:bg-blue-600 text-white font-bold flex items-center justify-center gap-2 transition-all shadow-[0_0_20px_rgba(19,91,236,0.3)]">
+                        <Link to="/analytics" className="h-12 px-6 rounded-lg bg-primary hover:bg-blue-600 text-white font-bold flex items-center justify-center gap-2 transition-all shadow-[0_0_20px_rgba(19,91,236,0.3)]">
                             <span className="material-symbols-outlined">view_in_ar</span>
                             Explore Interactive Model
-                        </button>
-                        <button className="h-12 px-6 rounded-lg bg-slate-800/50 hover:bg-white/5 text-white font-medium flex items-center justify-center gap-2 transition-all border border-white/10 backdrop-blur">
+                        </Link>
+                        <Link to="/solution" className="h-12 px-6 rounded-lg bg-slate-800/50 hover:bg-white/5 text-white font-medium flex items-center justify-center gap-2 transition-all border border-white/10 backdrop-blur">
                             <span className="material-symbols-outlined">play_circle</span>
                             Watch Methodology
-                        </button>
+                        </Link>
                     </div>
                     {/* Mini Stats */}
                     <div className="grid grid-cols-3 gap-6 mt-8 border-t border-slate-700/50 pt-8">

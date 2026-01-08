@@ -13,7 +13,7 @@ const Analytics = () => {
             }}></div>
 
             {/* Main Content Area */}
-            <main className="relative z-10 flex-1 flex flex-col p-4 md:p-8 max-w-[1440px] mx-auto w-full gap-8 perspective-2000 pt-24">
+            <main className="relative z-10 flex-1 flex flex-col p-4 md:p-8 max-w-[1440px] mx-auto w-full gap-8 perspective-2000" style={{ paddingTop: '180px' }}>
                 {/* Dashboard Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-full">
                     <KPIGrid />

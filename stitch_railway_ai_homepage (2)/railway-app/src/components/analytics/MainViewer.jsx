@@ -3,10 +3,11 @@ import React from 'react';
 import { useDemo } from '@/context/DemoContext';
 
 const MainViewer = () => {
-    const { isDemoMode } = useDemo();
+    const { isDemoMode, openDemoModal } = useDemo();
     const [viewMode, setViewMode] = React.useState('2d'); // '2d' or '3d'
     const [zoomLevel, setZoomLevel] = React.useState(1);
     const [showLayers, setShowLayers] = React.useState(false);
+    const [selectedAnomaly, setSelectedAnomaly] = React.useState(null);
 
     const toggleViewMode = () => setViewMode(prev => prev === '2d' ? '3d' : '2d');
     const toggleZoom = () => setZoomLevel(prev => prev === 1 ? 1.5 : 1);
@@ -152,13 +153,13 @@ const MainViewer = () => {
             <div className="h-40 bg-[#161e2e]/70 backdrop-blur-md rounded-2xl p-4 flex flex-col gap-3 border border-white/10">
                 <div className="flex justify-between items-center">
                     <h4 className="text-sm font-medium text-gray-300 uppercase tracking-wider">Flagged Anomalies</h4>
-                    <button className="text-xs text-primary hover:text-white transition-colors">View All Report</button>
+                    <button onClick={openDemoModal} className="text-xs text-primary hover:text-white transition-colors">View All Report</button>
                 </div>
                 <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
                     {/* Anomaly Item */}
                     {/* Anomaly Item - Rust (Critical) */}
                     {isDemoMode ? (
-                        <div className="min-w-[140px] h-full bg-[#111722] rounded-lg border border-[#324467] relative overflow-hidden flex items-center justify-center shadow-inner">
+                        <div onClick={openDemoModal} className="min-w-[140px] h-full bg-[#111722] rounded-lg border border-[#324467] relative overflow-hidden flex items-center justify-center shadow-inner cursor-pointer hover:border-red-500/50 transition-colors">
                             <img className="w-full h-full object-cover opacity-20 blur-sm grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_mUMU3ozyNx7KSVVA_o-Pk1D7-O2LiGK_xJHmuYqwaIb7Qs0dCk4ynxnzEj-3mIAlCkldke0_f9dSB389HRX71Dm3IXTRQnCcrmGG9BfInWSv_3O2Ts_xL_n1sx2QsNw901mAU5QG8GG2B5aYJ9oefM5Dc5Dl6Q_hKxokvj-0XlquZdU5us4T0Zqbt39TZyJU_8O3bBWHEYq97knrMlVOiLZqNUbTcGMF4X8FHL31oU-sKGhInVCbZUUkz4FPuZbIe6xOR0_03Gku" alt="Rust" />
                             <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 z-10">
                                 <span className="material-symbols-outlined text-slate-400 text-2xl">lock</span>
@@ -166,7 +167,7 @@ const MainViewer = () => {
                             </div>
                         </div>
                     ) : (
-                        <div className="min-w-[140px] h-full bg-[#111722] rounded-lg border border-[#324467] relative overflow-hidden group cursor-pointer hover:border-primary transition-colors">
+                        <div onClick={() => setSelectedAnomaly({ id: '442', type: 'Rust', severity: 'Critical', time: '09:42 AM', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD_mUMU3ozyNx7KSVVA_o-Pk1D7-O2LiGK_xJHmuYqwaIb7Qs0dCk4ynxnzEj-3mIAlCkldke0_f9dSB389HRX71Dm3IXTRQnCcrmGG9BfInWSv_3O2Ts_xL_n1sx2QsNw901mAU5QG8GG2B5aYJ9oefM5Dc5Dl6Q_hKxokvj-0XlquZdU5us4T0Zqbt39TZyJU_8O3bBWHEYq97knrMlVOiLZqNUbTcGMF4X8FHL31oU-sKGhInVCbZUUkz4FPuZbIe6xOR0_03Gku', description: 'Advanced surface oxidation detected on undercarriage panel B.' })} className="min-w-[140px] h-full bg-[#111722] rounded-lg border border-[#324467] relative overflow-hidden group cursor-pointer hover:border-primary transition-colors">
                             <img className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_mUMU3ozyNx7KSVVA_o-Pk1D7-O2LiGK_xJHmuYqwaIb7Qs0dCk4ynxnzEj-3mIAlCkldke0_f9dSB389HRX71Dm3IXTRQnCcrmGG9BfInWSv_3O2Ts_xL_n1sx2QsNw901mAU5QG8GG2B5aYJ9oefM5Dc5Dl6Q_hKxokvj-0XlquZdU5us4T0Zqbt39TZyJU_8O3bBWHEYq97knrMlVOiLZqNUbTcGMF4X8FHL31oU-sKGhInVCbZUUkz4FPuZbIe6xOR0_03Gku" alt="Rust" />
                             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-2">
                                 <p className="text-xs font-bold text-white">Rust #442</p>
@@ -176,7 +177,7 @@ const MainViewer = () => {
                     )}
                     {/* Anomaly Item - Wheel (Major) */}
                     {isDemoMode ? (
-                        <div className="min-w-[140px] h-full bg-[#111722] rounded-lg border border-[#324467] relative overflow-hidden flex items-center justify-center shadow-inner">
+                        <div onClick={openDemoModal} className="min-w-[140px] h-full bg-[#111722] rounded-lg border border-[#324467] relative overflow-hidden flex items-center justify-center shadow-inner cursor-pointer hover:border-red-500/50 transition-colors">
                             <img className="w-full h-full object-cover opacity-20 blur-sm grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpbrkIQZKBlE8UFqe_wHjXa5XSsVv__l_uVOyulSe_fdnXtKs9PFnWdFlSRwFhEMvYfpbFgEIm6dezp0WtbpBOvqmV4D7H1dOSJVPE7X_IM6DxVQOFypntPF085bezreils_3BJPbwzLWYVgCDkHpVNJ857mAVGgPeuZuMeT_7BoyEb888bUoOqS0QZc7OSDtu4d83DpTpA0kr3DpLWnX-5N1JUfSHVcuB1t4HO-o0NuamFVeBwkpbuH-yfkDHvTgQFzSqAgnbEVMZ" alt="Wheel" />
                             <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 z-10">
                                 <span className="material-symbols-outlined text-slate-400 text-2xl">lock</span>
@@ -184,7 +185,7 @@ const MainViewer = () => {
                             </div>
                         </div>
                     ) : (
-                        <div className="min-w-[140px] h-full bg-[#111722] rounded-lg border border-[#324467] relative overflow-hidden group cursor-pointer hover:border-primary transition-colors">
+                        <div onClick={() => setSelectedAnomaly({ id: '12A', type: 'Wheel', severity: 'Major', time: '09:40 AM', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCpbrkIQZKBlE8UFqe_wHjXa5XSsVv__l_uVOyulSe_fdnXtKs9PFnWdFlSRwFhEMvYfpbFgEIm6dezp0WtbpBOvqmV4D7H1dOSJVPE7X_IM6DxVQOFypntPF085bezreils_3BJPbwzLWYVgCDkHpVNJ857mAVGgPeuZuMeT_7BoyEb888bUoOqS0QZc7OSDtu4d83DpTpA0kr3DpLWnX-5N1JUfSHVcuB1t4HO-o0NuamFVeBwkpbuH-yfkDHvTgQFzSqAgnbEVMZ', description: 'Significant wear on wheel flange detected.' })} className="min-w-[140px] h-full bg-[#111722] rounded-lg border border-[#324467] relative overflow-hidden group cursor-pointer hover:border-primary transition-colors">
                             <img className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpbrkIQZKBlE8UFqe_wHjXa5XSsVv__l_uVOyulSe_fdnXtKs9PFnWdFlSRwFhEMvYfpbFgEIm6dezp0WtbpBOvqmV4D7H1dOSJVPE7X_IM6DxVQOFypntPF085bezreils_3BJPbwzLWYVgCDkHpVNJ857mAVGgPeuZuMeT_7BoyEb888bUoOqS0QZc7OSDtu4d83DpTpA0kr3DpLWnX-5N1JUfSHVcuB1t4HO-o0NuamFVeBwkpbuH-yfkDHvTgQFzSqAgnbEVMZ" alt="Wheel" />
                             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-2">
                                 <p className="text-xs font-bold text-white">Wheel #12A</p>
@@ -192,7 +193,7 @@ const MainViewer = () => {
                             </div>
                         </div>
                     )}
-                    <div className="min-w-[140px] h-full bg-[#111722] rounded-lg border border-[#324467] relative overflow-hidden group cursor-pointer hover:border-primary transition-colors">
+                    <div onClick={() => setSelectedAnomaly({ id: '09', type: 'Scratch', severity: 'Minor', time: '09:35 AM', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAW5eaG1UopCwhwwjBuUqUMhkwEI0ur56HJLj_CoGMaqhqGXXfIjdo8XBkd7pSdJis1GGbaiF6Ia3IjfBwY3GEsEOJewSZdKXqR5kWYbGDC2-iIrIh31fCSjUGFTPqDnMM0uXUEslx1zdaADvIiP7_WOtVRaX2b1unmKSB-68sEfhnWwydsSgmo9swwQGCsB6pdhEFL7CQWNDw1SkYpOLh30KN3rECWLbjq_9ypukO94F6FZzpgo9LRVHzxUxAxxtdEQ8dVEJkWUDec', description: 'Minor surface scratch on exterior paint.' })} className="min-w-[140px] h-full bg-[#111722] rounded-lg border border-[#324467] relative overflow-hidden group cursor-pointer hover:border-primary transition-colors">
                         <img className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW5eaG1UopCwhwwjBuUqUMhkwEI0ur56HJLj_CoGMaqhqGXXfIjdo8XBkd7pSdJis1GGbaiF6Ia3IjfBwY3GEsEOJewSZdKXqR5kWYbGDC2-iIrIh31fCSjUGFTPqDnMM0uXUEslx1zdaADvIiP7_WOtVRaX2b1unmKSB-68sEfhnWwydsSgmo9swwQGCsB6pdhEFL7CQWNDw1SkYpOLh30KN3rECWLbjq_9ypukO94F6FZzpgo9LRVHzxUxAxxtdEQ8dVEJkWUDec" alt="Scratch" />
                         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-2">
                             <p className="text-xs font-bold text-white">Scratch #09</p>
@@ -206,7 +207,59 @@ const MainViewer = () => {
                     </div>
                 </div>
             </div>
-        </div>
+
+
+            {
+                selectedAnomaly && (
+                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ backgroundColor: 'rgba(0,0,0,0.7)' }}>
+                        <div className="bg-[#101622] rounded-xl border border-white/10 w-full max-w-lg shadow-[0_0_50px_rgba(0,0,0,0.8)] overflow-hidden relative animate-in fade-in zoom-in-95 duration-200">
+                            <button
+                                onClick={() => setSelectedAnomaly(null)}
+                                className="absolute top-4 right-4 p-2 bg-white/5 hover:bg-white/10 rounded-full text-white transition-colors z-10"
+                            >
+                                <span className="material-symbols-outlined text-lg">close</span>
+                            </button>
+
+                            <div className="h-64 relative bg-black/50">
+                                <img src={selectedAnomaly.image} alt={selectedAnomaly.type} className="w-full h-full object-contain" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#101622] to-transparent"></div>
+                                <div className="absolute bottom-4 left-4">
+                                    <div className="flex items-center gap-2 mb-1">
+                                        <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase ${selectedAnomaly.severity === 'Critical' ? 'bg-red-500/20 text-red-500 border border-red-500/30' : selectedAnomaly.severity === 'Major' ? 'bg-orange-500/20 text-orange-500 border border-orange-500/30' : 'bg-yellow-500/20 text-yellow-500 border border-yellow-500/30'}`}>
+                                            {selectedAnomaly.severity}
+                                        </span>
+                                        <span className="text-xs text-gray-400 font-mono">{selectedAnomaly.time}</span>
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-white">{selectedAnomaly.type} #{selectedAnomaly.id}</h3>
+                                </div>
+                            </div>
+
+                            <div className="p-6 space-y-4">
+                                <div>
+                                    <h4 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">Analysis Result</h4>
+                                    <p className="text-gray-300 leading-relaxed">{selectedAnomaly.description}</p>
+                                </div>
+
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div className="bg-white/5 rounded-lg p-3">
+                                        <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-1">Confidence Score</div>
+                                        <div className="text-lg font-mono font-bold text-primary">98.2%</div>
+                                    </div>
+                                    <div className="bg-white/5 rounded-lg p-3">
+                                        <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-1">Recommended Action</div>
+                                        <div className="text-sm font-medium text-white">Schedule Maintenance</div>
+                                    </div>
+                                </div>
+
+                                <button onClick={() => setSelectedAnomaly(null)} className="w-full py-3 bg-primary hover:bg-blue-600 text-white font-bold rounded-lg transition-colors mt-2">
+                                    Acknowledge & Archive
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+        </div >
     )
 }
 export default MainViewer;

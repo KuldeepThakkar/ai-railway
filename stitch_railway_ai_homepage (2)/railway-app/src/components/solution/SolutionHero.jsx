@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 const SolutionHero = () => {
     return (
         <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-background-dark pt-16">
@@ -27,13 +29,13 @@ const SolutionHero = () => {
                         Mitigate motion blur and low-light issues instantly with our edge-native AI. Inspect wagons in real-time with sub-millimeter precision.
                     </p>
                     <div className="flex flex-wrap gap-4 mt-4">
-                        <button className="bg-white text-background-dark px-6 py-3 rounded-lg font-bold hover:bg-slate-200 transition-colors flex items-center gap-2">
+                        <Link to="/analytics" className="bg-white text-background-dark px-6 py-3 rounded-lg font-bold hover:bg-slate-200 transition-colors flex items-center gap-2">
                             <span className="material-symbols-outlined">view_in_ar</span>
                             Start Interactive Tour
-                        </button>
-                        <button className="px-6 py-3 rounded-lg font-medium text-white border border-white/10 hover:bg-white/5 transition-colors">
+                        </Link>
+                        <Link to="/technology" className="px-6 py-3 rounded-lg font-medium text-white border border-white/10 hover:bg-white/5 transition-colors">
                             View Specs
-                        </button>
+                        </Link>
                     </div>
                 </div>
                 {/* Abstract 3D Visualization Placeholder */}
