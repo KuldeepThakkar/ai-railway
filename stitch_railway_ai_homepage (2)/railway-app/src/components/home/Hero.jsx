@@ -22,7 +22,7 @@ const Hero = () => {
                 </div>
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight tracking-tighter mb-6 drop-shadow-2xl">
                     SEE THE UNSEEN<br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">AT 300 KM/H</span>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">AT 80 KM/H</span>
                 </h1>
                 <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-body">
                     Next-Gen Visual Inspection for High-Speed Rail operating on edge devices. Detect anomalies in real-time with military-grade precision.

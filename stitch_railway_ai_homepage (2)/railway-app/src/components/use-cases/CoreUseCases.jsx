@@ -50,7 +50,7 @@ const CoreUseCases = () => {
                                 <span className="material-symbols-outlined text-2xl">shutter_speed</span>
                             </div>
                             <h3 className="text-xl font-bold text-white mb-2">Motion Blur Mitigation</h3>
-                            <p className="text-slate-400 text-sm mb-6">Proprietary GANs reconstruct sharp imagery from trains moving at speeds up to 300km/h.</p>
+                            <p className="text-slate-400 text-sm mb-6">Proprietary GANs reconstruct sharp imagery from trains moving at speeds up to 80km/h.</p>
                             <ul className="space-y-2 mb-6">
                                 <li className="flex items-center gap-2 text-xs text-gray-400">
                                     <span className="material-symbols-outlined text-green-500 text-sm">check_circle</span>

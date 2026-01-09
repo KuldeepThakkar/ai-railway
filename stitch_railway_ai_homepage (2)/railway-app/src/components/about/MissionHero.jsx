@@ -10,7 +10,7 @@ const MissionHero = () => {
                         Mission Critical Intelligence
                     </div>
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1]">
-                        Seeing the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-primary">Unseen</span> at 300km/h
+                        Seeing the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-primary">Unseen</span> at 80km/h
                     </h1>
                     <p className="text-lg text-slate-400 max-w-xl leading-relaxed font-body">
                         We are redefining railway safety through edge-computing AI. Our systems process visual data in real-time, mitigating motion blur and identifying micro-fractures before they become critical failures.
@@ -21,7 +21,7 @@ const MissionHero = () => {
                             <span className="text-xs text-slate-400 uppercase tracking-wider">Latency</span>
                         </div>
                         <div className="flex flex-col gap-1 border-l-2 border-primary/50 pl-4">
-                            <span className="text-2xl font-bold text-white">99.9%</span>
+                            <span className="text-2xl font-bold text-white">80%</span>
                             <span className="text-xs text-slate-400 uppercase tracking-wider">Accuracy</span>
                         </div>
                         <div className="flex flex-col gap-1 border-l-2 border-primary/50 pl-4">

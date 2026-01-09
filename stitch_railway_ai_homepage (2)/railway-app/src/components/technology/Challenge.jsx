@@ -12,7 +12,7 @@ const Challenge = () => {
                         </div>
                         <h2 className="text-white text-4xl font-bold leading-tight">Motion Blur &amp; <br />Low Light Conditions</h2>
                         <p className="text-slate-400 text-lg leading-relaxed">
-                            Standard industrial cameras fail at 120km/h. The relative velocity creates significant motion blur, while tunnel environments introduce severe low-light noise.
+                            Standard industrial cameras fail at 80km/h. The relative velocity creates significant motion blur, while tunnel environments introduce severe low-light noise.
                         </p>
                         <p className="text-slate-400 text-lg leading-relaxed">
                             Our initial stage captures raw data, but it's often unusable for precise defect detection like micro-cracks on wheel flanges. This is where our AI pipeline begins.
@@ -20,7 +20,7 @@ const Challenge = () => {
                         <div className="grid grid-cols-2 gap-6 mt-4">
                             <div className="p-4 rounded-lg bg-slate-800/50 border border-slate-700">
                                 <span className="material-symbols-outlined text-primary text-3xl mb-2">speed</span>
-                                <div className="text-white font-bold text-xl">120 km/h</div>
+                                <div className="text-white font-bold text-xl">80 km/h</div>
                                 <div className="text-slate-400 text-sm">Train Velocity</div>
                             </div>
                             <div className="p-4 rounded-lg bg-slate-800/50 border border-slate-700">

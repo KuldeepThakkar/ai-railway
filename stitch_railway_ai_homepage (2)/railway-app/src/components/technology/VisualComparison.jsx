@@ -18,7 +18,7 @@ const VisualComparison = () => {
                     {/* Before Card */}
                     <div className="group relative rounded-xl overflow-hidden border border-slate-700 bg-slate-900">
                         <div className="absolute top-4 left-4 z-10 bg-black/70 backdrop-blur px-3 py-1 rounded text-slate-300 text-xs font-bold border border-slate-600">
-                            RAW INPUT (120km/h)
+                            RAW INPUT (80km/h)
                         </div>
                         <div className="aspect-[4/3] bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuASEOvxd1zbo1HQ1DVq7Il5h-zhHwNitr1CXiB59zkD6VZlTACPZ3X7UuiykXiBfQ8SzqmVVfztoUnJLqzjXtFwZXoSk4QWHhcmxGHwt6wVVnzRg5Mxmy03T1g-MMb6zet_7V0dHxlJ2SEf643CYINSTuFVDtMZEQKiMj5_mPnKa5ygGdpngd9VbZ1Oi2qxjj5FDjT6d7ilekSreRM0F-RENXz0Au61OluB_pxGxDTzZ9-pOik-W08wscLQEOUgBXZ1yImo3PtMZrVw')", filter: "blur(3px) brightness(0.6)" }}>
                         </div>

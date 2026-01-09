@@ -19,7 +19,7 @@ const TechHero = () => {
                         System Online • v4.2.0
                     </div>
                     <h1 className="text-white text-5xl md:text-7xl font-bold leading-tight tracking-[-0.033em]">
-                        Precision at <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-300">120km/h</span>
+                        Precision at <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-300">80km/h</span>
                     </h1>
                     <p className="text-slate-400 text-lg md:text-xl font-normal leading-relaxed max-w-[720px]">
                         Our proprietary GAN-based pipeline reconstructs high-fidelity visuals from motion-blurred feeds in real-time. Explore the layers of our edge inspection architecture.

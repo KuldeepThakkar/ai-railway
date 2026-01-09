@@ -28,7 +28,7 @@ const ProblemSolution = () => {
                             <div className="flex flex-col gap-2">
                                 <div className="flex items-center gap-2 text-white font-bold">
                                     <span className="material-symbols-outlined text-primary">speed</span>
-                                    300 km/h
+                                    80 km/h
                                 </div>
                                 <p className="text-sm text-gray-500">Capture speed supported</p>
                             </div>

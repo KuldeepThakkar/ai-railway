@@ -13,7 +13,7 @@ const KPIGrid = () => {
                 </div>
                 <p className="text-[#92a4c9] text-sm font-medium uppercase tracking-wider mb-1">Total Wagons Scanned</p>
                 <div className="flex items-baseline gap-2">
-                    <h3 className="text-4xl font-bold text-white">14,205</h3>
+                    <h3 className="text-4xl font-bold text-white">1700+</h3>
                     <span className="text-[#0bda5e] text-sm font-bold flex items-center">
                         <span className="material-symbols-outlined text-base">trending_up</span> 12%
                     </span>
@@ -30,7 +30,7 @@ const KPIGrid = () => {
                 </div>
                 <p className="text-[#92a4c9] text-sm font-medium uppercase tracking-wider mb-1">Defects Detected</p>
                 <div className="flex items-baseline gap-2">
-                    <h3 className="text-4xl font-bold text-white">843</h3>
+                    <h3 className="text-4xl font-bold text-white">400+</h3>
                     <span className="text-[#0bda5e] text-sm font-bold flex items-center">
                         <span className="material-symbols-outlined text-base">trending_up</span> 5%
                     </span>
@@ -76,7 +76,7 @@ const KPIGrid = () => {
                     </div>
                 ) : (
                     <div className="flex items-baseline gap-2">
-                        <h3 className="text-4xl font-bold text-white">92%</h3>
+                        <h3 className="text-4xl font-bold text-white">80%</h3>
                         <span className="text-[#0bda5e] text-sm font-bold flex items-center">
                             <span className="material-symbols-outlined text-base">trending_up</span> 2%
                         </span>

@@ -26,7 +26,7 @@ const UseCasesHero = () => {
                     </div>
                     <h1 className="text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-white">
                         Precision at <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">300 km/h</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">80 km/h</span>
                     </h1>
                     <p className="text-lg text-slate-400 leading-relaxed max-w-md">
                         Our edge-based AI eliminates motion blur and detects critical structural defects in real-time, even in low-light conditions.

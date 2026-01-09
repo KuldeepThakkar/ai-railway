@@ -23,7 +23,7 @@ const SolutionHero = () => {
                     </div>
                     <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight text-white">
                         See clearly at <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-500">300 km/h</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-500">80 km/h</span>
                     </h1>
                     <p className="text-lg text-slate-400 max-w-lg leading-relaxed">
                         Mitigate motion blur and low-light issues instantly with our edge-native AI. Inspect wagons in real-time with sub-millimeter precision.

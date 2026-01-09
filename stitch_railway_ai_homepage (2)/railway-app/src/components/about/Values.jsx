@@ -11,7 +11,7 @@ const Values = () => {
                         <span className="material-symbols-outlined">speed</span>
                     </div>
                     <h3 className="text-xl font-bold text-white mb-2">Extreme Velocity</h3>
-                    <p className="text-sm text-slate-400 leading-relaxed font-body">Processing visual data at 300km/h without compromising detail or frame integrity.</p>
+                    <p className="text-sm text-slate-400 leading-relaxed font-body">Processing visual data at 80km/h without compromising detail or frame integrity.</p>
                 </div>
                 {/* Value Card 2 */}
                 <div className="group relative p-8 rounded-2xl bg-surface-dark border border-border-dark hover:border-primary/50 transition-all duration-300 overflow-hidden">

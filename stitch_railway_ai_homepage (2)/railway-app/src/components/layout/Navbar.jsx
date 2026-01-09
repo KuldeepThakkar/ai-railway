@@ -46,7 +46,7 @@ const Navbar = () => {
                                 </div>
                                 <div className="flex flex-col gap-0.5">
                                     <span className="text-[9px] leading-none tracking-widest text-slate-400 font-medium">SEE THE UNSEEN</span>
-                                    <span className="text-[9px] leading-none tracking-widest text-slate-400 font-medium">AT 300 KM/H</span>
+                                    <span className="text-[9px] leading-none tracking-widest text-slate-400 font-medium">AT 80 KM/H</span>
                                 </div>
                             </div>
                         )}
