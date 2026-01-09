@@ -6,6 +6,7 @@ const Dashboard = () => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [uploading, setUploading] = useState(false);
     const [status, setStatus] = useState(null);
+    const [processedVideoUrl, setProcessedVideoUrl] = useState(null);
 
     const handleFileChange = (e) => {
         if (e.target.files && e.target.files[0]) {
@@ -35,7 +36,11 @@ const Dashboard = () => {
             }
 
             const result = await response.json();
+
             setStatus(`Success! ${result.frames_extracted} frames extracted. Stream Updated.`);
+            if (result.video_url) {
+                setProcessedVideoUrl(result.video_url);
+            }
         } catch (error) {
             console.error('Error:', error);
             if (error.message && (error.message.includes('fetch') || error.message.includes('Failed to fetch'))) {
@@ -54,7 +59,7 @@ const Dashboard = () => {
 
                 {/* Header */}
                 <div className="space-y-4">
-                    <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500">
+                    <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-indigo-500">
                         Control Dashboard
                     </h1>
                     <p className="text-slate-400 max-w-2xl">
@@ -116,11 +121,25 @@ const Dashboard = () => {
                         )}
                     </div>
 
-                    {/* Quick Stats Placeholder */}
-                    <div className="bg-[#101622] border border-[#232f48] rounded-2xl p-8 space-y-6 shadow-2xl flex flex-col items-center justify-center text-center opacity-60 pointer-events-none">
-                        <span className="material-symbols-outlined text-4xl text-slate-500 mb-2">analytics</span>
-                        <h3 className="text-xl font-semibold">Live Analytics Preview</h3>
-                        <p className="text-slate-400">Upload a video to see extraction stats here.</p>
+                    {/* Quick Stats / Processed Video */}
+                    <div className={`bg-[#101622] border border-[#232f48] rounded-2xl p-8 space-y-6 shadow-2xl flex flex-col items-center justify-center text-center ${!processedVideoUrl ? 'opacity-60' : ''}`}>
+                        {processedVideoUrl ? (
+                            <div className="w-full space-y-4">
+                                <h3 className="text-xl font-semibold text-green-400">Detection Complete</h3>
+                                <div className="rounded-xl overflow-hidden border border-[#232f48] shadow-lg bg-black">
+                                    <video src={processedVideoUrl} controls className="w-full h-auto" />
+                                </div>
+                                <Button onClick={() => window.open(processedVideoUrl, '_blank')} variant="outline" className="border-blue-500/20 text-blue-400 hover:bg-blue-500/10">
+                                    Download Processed Video
+                                </Button>
+                            </div>
+                        ) : (
+                            <>
+                                <span className="material-symbols-outlined text-4xl text-slate-500 mb-2">analytics</span>
+                                <h3 className="text-xl font-semibold">Live Analytics Preview</h3>
+                                <p className="text-slate-400">Upload a video to see extraction stats & AI detection results here.</p>
+                            </>
+                        )}
                     </div>
                 </div>
             </div>
